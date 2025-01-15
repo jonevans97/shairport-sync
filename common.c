@@ -2159,7 +2159,7 @@ int get_device_id(uint8_t *id, int int_length) {
 #ifdef AF_PACKET
         if ((ifa->ifa_addr) && (ifa->ifa_addr->sa_family == AF_PACKET)) {
           struct sockaddr_ll *s = (struct sockaddr_ll *)ifa->ifa_addr;
-          if ((strcmp(ifa->ifa_name, "lo") != 0) && (strcmp(ifa->ifa_name, "radiotap0")) {
+          if ((strcmp(ifa->ifa_name, "lo") != 0) && (strcmp(ifa->ifa_name, "radiotap0") != 0)) {
             found = 1;
             response = 0;
             for (i = 0; ((i < s->sll_halen) && (i < int_length)); i++) {
